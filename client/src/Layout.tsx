@@ -2,7 +2,7 @@ import { Route, Routes, } from 'react-router-dom'
 import { Confessions } from './Confessions'
 import { Misdemeanour } from './Misdemeanour'
 import { NotFound } from './NotFound'
-import { Link } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 interface RoutesProps {
   children?: React.ReactNode;
@@ -13,13 +13,14 @@ export const Layout: React.FC = () =>
     <>
         <ul>
             <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/">Home</NavLink>
             </li>
             <li>
-                <Link to="/misdemeanour">Misdemeanour</Link>
+                <NavLink 
+                    to="/misdemeanour">Misdemeanour</NavLink>
             </li>
             <li>
-                <Link to="confessions">Confessions</Link>
+                <NavLink to="confessions">Confessions</NavLink>
             </li>
         </ul>
         <Routes>

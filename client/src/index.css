@@ -51,6 +51,10 @@ li a {
 	text-decoration: none;
 }
 
+li a.active {
+  text-decoration: underline;
+}
+
 li a:hover {
   background-color: #213547;
 }
