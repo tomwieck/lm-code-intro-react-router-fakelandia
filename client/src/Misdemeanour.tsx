@@ -31,6 +31,21 @@ export const Misdemeanour : React.FC = () => {
     }
   ]);
 
+  const getEmoji = (misdemeanour: String) => {
+    if(misdemeanour === 'united') {
+      return '😈'
+    }
+    if(misdemeanour === 'vegetables') {
+      return '🥗'
+    }
+    if(misdemeanour === 'lift') {
+      return '🗣'
+    }
+    if(misdemeanour === 'rudeness') {
+      return '🤪'
+    }
+}
+
   // useContext
 
   useEffect(() => {
@@ -51,10 +66,13 @@ export const Misdemeanour : React.FC = () => {
 
 		misdemeanours.forEach((mis, index) => {
       cols.push(
-        <div>≈
+        <div  key={index}>
           <p key={mis.citizenId}>
-            {mis.citizenId} - {mis.misdemeanour} - {mis.date}
+            {mis.citizenId} - {mis.misdemeanour}
+            { getEmoji(mis.misdemeanour) }
+            - {mis.date}
           </p>
+          
           <img src='https://picsum.photos/100/50' />
         </div>
       );
